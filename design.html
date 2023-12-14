@@ -1,0 +1,488 @@
+<html>
+
+<head>
+    <title>
+        your metaverse
+    </title>
+</head>
+<link rel="stylesheet" href="css/style1.css">
+<style>
+    body {
+        margin: 0;
+        padding:0;
+        background-image: url("imgs/bg.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+        background-position: center;
+
+    }
+
+
+    header {
+        background-color: #c940c2;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #logo {
+        width: 50px;
+        /* Adjust the size of your logo */
+    }
+
+    #nav {
+        display: flex;
+        align-items: center;
+    }
+
+    #nav a {
+        color: rgb(63, 49, 49);
+        text-decoration: none;
+        margin: 0 15px;
+    }
+
+
+    #login,
+    #signup {
+        background-color: #8c368f;
+        /* Adjust the button color */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+
+    #hero-heading {
+        font-size: 48px;
+        font-weight: 700;
+        animation: slideFromLeft 1s ease-in-out;
+        /* Add animation */
+    }
+    .hero.container{
+        margin:200px;
+    }
+
+    @keyframes slideFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .metal-ball {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(181, 228, 11, 0.363);
+        /* Metal color, adjust as needed */
+        border-radius: 50%;
+        margin: 10px;
+        display: inline-block;
+
+    }
+
+    /* Apply animation to metal balls */
+    @keyframes moveUp {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-50px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .animated-ball {
+        animation: moveUp 2s infinite;
+        /* Add animation */
+    }
+
+    .hexagon-container {
+        width: 100px;
+        height: 58px;
+        position: absolute;
+        margin: 29px 0;
+    }
+
+    .hexagon {
+        width: 50%;
+        padding-bottom: 50%;
+        background-color: #1edf38;
+        /* Hexagon color */
+        position: absolute;
+        clip-path: polygon(50% 0%, 100% 29%, 100% 86%, 50% 100%, 0% 86%, 0% 29%);
+        animation: fadeEffect 2s infinite;
+        /* Add fading effect */
+    }
+
+    @keyframes fadeEffect {
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .hexagon-container {
+        position: relative;
+    }
+
+    .hexagon {
+        width: 50px;
+        height: 20px;
+        background-color: #34db3c;
+        position: absolute;
+        top: 0;
+        left: 1000;
+        margin: 100px 0;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        opacity: 0;
+        animation: fadeInOut 2s infinite;
+    }
+
+    .hexagon:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .hexagon:nth-child(3) {
+        animation-delay: 1s;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    #hello {
+        position: relative;
+        height: 100vh;
+        background-image: url('hero-background.jpg');
+        /* Replace with actual path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .card-container {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .card {
+        width: 150px;
+        height: 150px;
+        background-color: #032ad8;
+        /* Replace with desired color */
+        margin: 500px 10px;
+        opacity: 0;
+        animation: moveUp 10s infinite linear;
+        /* Adjust the duration as needed */
+    }
+
+    .card:nth-child(2) {
+        animation-delay: 1s;
+    }
+
+    .card:nth-child(3) {
+        animation-delay: 2s;
+    }
+
+    .card:nth-child(4) {
+        animation-delay: 3s;
+    }
+
+    .card:nth-child(5) {
+        animation-delay: 4s;
+    }
+
+    .card:nth-child(6) {
+        animation-delay: 5s;
+    }
+
+    @keyframes moveUp {
+
+        0%,
+        100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+
+        50% {
+            transform: translateY(-50px);
+            opacity: 1;
+        }
+    }
+
+    #features {
+        background-color: #8a4174;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .feature {
+        display: inline-block;
+        margin: 0 90px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .feature:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature i {
+        font-size: 48px;
+        color: #3498db;
+        /* Replace with desired color */
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .feature h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+    }
+
+    #plans {
+        position: relative;
+        text-align: center;
+        padding: 50px 0;
+        overflow: hidden;
+        /* Hide overflowing content */
+    }
+
+    .circle-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: rgba(52, 152, 219, 0.2);
+        /* Replace with desired color */
+        animation: rotateCircle 8s infinite linear;
+        overflow: hidden;
+        /* Hide overflowing content */
+    }
+
+    .plan {
+        display: inline-block;
+        background-color: #3498db;
+        /* Replace with desired color */
+        color: white;
+        padding: 20px;
+        margin: 0 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes rotateCircle {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    #about {
+        text-align: center;
+        padding: 50px 0;
+        background-color: #f0f0f0;
+    }
+
+    #about-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    #about-image {
+        margin-top: 30px;
+    }
+
+    #about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="E://designe//imgs//logoo.png" alt="Your Logo" width="300px" height="100px"> <!-- Replace with your actual logo -->
+        </div>
+        <div id="login-signup", align="center">
+            <button id="login">Login</button>
+            <button id="signup">Sign Up</button>
+        </div>
+        <div id="nav">
+            <a class="nav-link" href="#">call now:9083892372</a>
+            <a class="nav-link" href="#">email:okay@gmail.com</a>
+
+        </div>
+    </header>
+    <div class="metal-ball animated-ball"></div>
+    <div class="hexagon-container">
+        <div class="hexagon"></div>
+        <div class="hexagon"></div>
+    </div>
+    <div class="hexagon-container">
+        <div class="hexagon"></div>
+    </div>
+    <section id="hero" align="center">
+        <div class="container">
+                <div class="col-md-12">
+                    <h1 id="hero-heading">The <br>Metaverse <img src="E://designe//imgs//lo.png" alt="lo" , width="50px"
+                            ,height="50px" <br>can change society</h1>
+                </div>
+                <div class="metal-ball "></div>
+                <div class="hexagon-container">
+                    <div class="hexagon"></div>
+                </div>
+                <div class="metal-ball animated-ball"></div>
+                <div class="metal-ball "></div>
+                <div class="hexagon-container">
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div id="hello">
+            <div class="card-container">
+                <div class="card">
+                    <h1>Running days<br>6113</h1>
+                </div>
+                <div class="metal-ball animated-ball"></div>
+                <div class="card">
+                    <h1>Total investments<br>$0.00</h1>
+                </div>
+                <div class="metal-ball animated-ball"></div>
+                <div class="card">
+                    <h1>Projects started<br>Feb 21</h1>
+                </div>
+                <div class="card">
+                    <h1>Online visitors<br>94</h1>
+                </div>
+                <div class="card">
+                    <h1>withdrawls<br>$0.00</h1>
+                    <div>
+                        <div class="metal-ball animated-ball"></div>
+                    </div>
+                </div>
+    </section>
+    <section id="features">
+        <div class="feature">
+            <i class="fa fa-check-circle"></i>
+            <h3>best server</h3>
+        </div>
+        <div class="metal-ball animated-ball"></div>
+        <div class="feature">
+            <i class="fa fa-globe"></i>
+            <h3>low commision</h3>
+        </div>
+        <div class="feature">
+            <i class="fa fa-cogs"></i>
+            <h3>settings</h3>
+        </div>
+        <div class="metal-ball animated-ball"></div>
+        <div class="feature">
+            <i class="fa fa-briefcase"></i>
+            <h3>real time monitering</h3>
+        </div>
+    </section>
+    <section id="plans">
+        <h1>Investments <img src="E://designe//imgs//lo.png" alt="lo" width="50px" height="50px">PLAN</h1>
+        <div class="circle-container"></div>
+        <div class="plan">upto 0.1<br>Plan1</div>
+        <div class="plan">upto 0.4<br>Plan2</div>
+        <div class="plan">upto 2.4<br>Plan3</div>
+    </section>
+    <section id="plans">
+        <div class="metal-ball animated-ball"></div>
+        <div class="circle-container"></div>
+        <div class="plan">upto 4.2<br>Plan4</div>
+        <div class="plan">upto 6.1<br>Plan5</div>
+        <div class="plan">upto 8.3<br>Plan6</div>
+        <div class="metal-ball animated-ball"></div>
+    </section>
+    <section id="about">
+        <div id="about-content">
+            <div class="metal-ball animated-ball"></div>
+            <div id="about-image">
+                <img src="E://designe//imgs//pic2.jpeg" alt="metaverse images" width="500px" height="100px">
+                <!-- Replace with actual path -->
+            </div>
+            <h2>About <img src="E://designe//imgs//lo.png" alt="lo" width="50px" height="50px">META</h2>
+            <p>the term "metaverse" refers to a virtual reality space that exists parallel to the physical world. It's a
+                collective virtual shared space that is created by the convergence of physical and virtual reality. In
+                the metaverse, users can interact with a computer-generated environment and other users in real-time.
+            </p>
+            <div class="metal-ball animated-ball"></div>
+            <p>Several companies and projects are exploring and contributing to the development of the metaverse.
+                Technologies such as virtual reality, augmented reality, blockchain, and artificial intelligence play
+                crucial roles in enabling the metaverse experience.
+
+                It's important to note that discussions and developments related to the metaverse may have progressed
+                since my last update in January 2022. The concept is dynamic, and various industries, including gaming,
+                technology, entertainment, and more, are actively involved in shaping the future of the metaverse.</p>
+                <div class="metal-ball animated-ball"></div>
+                <div id="about-image">
+                <img src="E://designe//imgs//pic.jpeg" alt="metaverse images" width="500px" height="100px">
+                <!-- Replace with actual path -->
+            </div>
+        </div>
+        <div class="metal-ball animated-ball"></div>
+    </section>
+
+    <!-- Include Font Awesome CSS (or any other icon library) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <div class="metal-ball animated-ball"></div>
+</body>
+
+</html>
